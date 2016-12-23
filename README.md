@@ -1,0 +1,1 @@
+a reusable carousel react component

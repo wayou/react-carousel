@@ -53,15 +53,16 @@ class Carousel extends React.PureComponent {
 
         if (!initialized) {
             console.log('componentDidUpdate');
-            this.init();
+            // this.init();
             initialized = true;
         }
 
     }
 
     initialSize() {
-        // let width = $('.carousel-item').width();
         let width = this.refs.carouselWrap.offsetWidth;
+        console.log(`width is ${width}`);
+        
         // console.log(`width is ${width}`);
 
         let height = Math.round(width / 3);
@@ -170,10 +171,7 @@ class Carousel extends React.PureComponent {
                         props.data.map((item, index) => {
                             return (
                                 <li key={index}
-                                    className={{
-                                        'indicator-item': true,
-                                        'active': this.state.currentIndex == index
-                                    }}
+                                    className={"indicator-item"+(this.state.currentIndex == index?' active':'')}
                                     onClick={this.goToSlide.bind(this, index)}>
                                 </li>
                             )
@@ -194,14 +192,13 @@ Carousel.defaultProps = {
 
 Carousel.PropTypes = {
     clsName: React.PropTypes.string,//customized className
-    //FIXME: error occurs
-    // data: React.PropTypes.array(
-    //     React.PropTypes.shape({
-    //         imgUrl: React.PropTypes.string,//url of the slide iamge
-    //         url: React.PropTypes.string,// url to navigate when click
-    //         title: React.PropTypes.string// slide title
-    //     })
-    // ),
+    data: React.PropTypes.arrayOf(
+        React.PropTypes.shape({
+            imgUrl: React.PropTypes.string,
+            url: React.PropTypes.number,
+            title: React.PropTypes.number,
+        })
+    ),
     autoPlay: React.PropTypes.bool,// start play immediately or not
     duration: React.PropTypes.string// how long a single slide shows in ms 
 };

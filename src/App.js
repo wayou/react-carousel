@@ -29,13 +29,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {
-          // <div className="App-header">
-          //   <img src={logo} className="App-logo" alt="logo" />
-          // </div>
-        }
+        <h1>react carousel</h1>
         <div className="demo">
-          <Carousel autoPlay={true} data={this.getCarouselData()}></Carousel>
+          <Carousel data={this.getCarouselData()}></Carousel>
         </div>
       </div>
     );

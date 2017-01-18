@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import Carousel from './Carousel';
-import './App.css';
+import ReactDOM from 'react-dom';
 
+import Carousel  from '../../src/main';
+
+// const App = React.createClass({
 class App extends Component {
 
-  getRandomColor = () => {
+  getRandomColor () {
     var letters = '0123456789ABCDEF';
     var color = '';
     for (var i = 0; i < 6; i++) {
@@ -29,7 +30,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>react carousel</h1>
         <div className="demo">
           <Carousel data={this.getCarouselData()}></Carousel>
         </div>
@@ -38,4 +38,4 @@ class App extends Component {
   }
 }
 
-export default App;
+ReactDOM.render(<App />, document.getElementById('example'));

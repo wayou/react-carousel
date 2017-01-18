@@ -1,6 +1,2 @@
-a very simple react carousel component
+### REACT-CAROUSEL
 
-### TODO
-- [] theme support
-- [] split lib src from demo page
-- [] css processor

@@ -5,6 +5,8 @@
 
 import React from 'react';
 
+import jss from 'js-stylesheet';
+
 // TODO: using a image component with error fallback
 // import NiceImage from 'common/components/NiceImage/NiceImage.es6';
 
@@ -37,6 +39,9 @@ class Carousel extends React.PureComponent {
         // window.onresize = (event) => {
         //     this.initialSize();
         // };
+
+        jss(require('./helpers/styles.js')); // eslint-disable-line global-require
+
         this.init();
     }
 

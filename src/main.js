@@ -5,6 +5,9 @@
 
 import React from 'react';
 
+import SafeImg from './components/SafeImg';
+import SafeBg from './components/SafeBg';
+
 import jss from 'js-stylesheet';
 
 // TODO: using a image component with error fallback
@@ -161,7 +164,7 @@ class Carousel extends React.PureComponent {
                             return (
                                 <div className="carousel-item" key={index}>
                                     <a href={item.url || 'javascript:;'} >
-                                        <img className="carousel-img" src={item.imgUrl} style={{ height: this.state.height }} />
+                                        <SafeImg className="carousel-img" src={item.imgUrl} style={{ height: this.state.height }} />
                                         <div className="carousel-title">
                                             <p>{item.title}</p>
                                         </div>
